@@ -1,0 +1,863 @@
+body{
+    font-family: Helvetica,Tahoma;
+    margin: 0px;
+    background-color: rgba(63, 81, 181, 0.8);
+}
+
+.background{
+  /* The background image */
+ background-image: url("/Users/maple/Desktop/nodews/weather_server/images/city_img/bg.jpeg");
+
+ /* Set a specified height, or the minimum height for the background image */
+ min-height: 500px;
+
+ /* Set background image to fixed (don't scroll along with the page) */
+ background-attachment: fixed;
+
+ /* Center the background image */
+ background-position: center;
+
+ /* Set the background image to no repeat */
+ background-repeat: no-repeat;
+
+ /* Scale the background image to be as large as possible */
+ background-size: cover;
+ position: relative; 
+}
+
+
+.background::before{
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(63, 81, 181, 0.8);
+   
+}
+.title{
+    margin-top: 12rem;
+    color: white;
+    font-size: 5rem;
+    font-weight: 700;
+    font-family: Helvetica,Tahoma;
+    text-align: center;
+    /* opacity: 0.7; */
+}
+.form-button{
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items:center;
+    align-content: center;
+    height: auto;
+    width: 100%;
+    /* opacity: 0.7; */
+    /* background-color: turquoise; */
+}
+.options{
+    /* display: block; */
+    height:2rem;
+    width: 20vw;
+    margin: 5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0px 0px 6px 1px lightgrey;
+    text-align: center;
+    /* background-color: yellowgreen; */
+}
+.search{
+    /* display: block; */
+    text-align: center;
+    margin: 5rem;
+    height:2rem;
+    width: 10vw;
+    border: 2px solid white;
+    color: white;
+    background-color: rgb(187, 22, 22);
+    border-radius: 0.5rem;
+}
+.top{
+    opacity: 0.8;
+    background-image: linear-gradient(rgb(6, 40, 104),#0E0F34);
+    height: 95vh;
+    width: 100vw;
+    display: inline-block;
+}
+.city{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items:center;
+    align-content: center;
+    height: auto;
+    width: 100%;
+     /* border: 2px solid black;   */
+    /* margin-top: 5rem; */
+    margin-bottom: 5rem;
+}
+.city-name-and-temp{
+    margin-top: 5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+.city_name{
+    display: inline-block;
+    /* font-family: Helvetica,Tahoma; */
+    font-size: 2rem;
+    font-weight: 500;
+    margin: 1rem;
+    color: white;
+    font-family: sans-serif;
+    
+   /* border: 2px solid black;   */
+}
+.city_temp{
+    display: inline-block;
+    font-family: Helvetica,Tahoma;
+    font-size:2rem;
+    font-weight: 500;
+    margin: 1rem;
+    color: white;
+    /* border: 2px solid black;  */
+}
+.weather_pops_container{
+    display: flex;
+    justify-content: space-around;
+    height: auto;
+    width: 100%;
+}
+.weather_pops{
+    width: 60%;
+    /* border:2px solid black; */
+}
+.empty{
+    
+    height:15vh;
+    width:100%;
+    /* background-color: teal; */
+    margin: 5rem;
+    margin-top: 0;
+}
+
+.div_o{
+    height: 10vh;
+    width: 20vw;
+    display: flex;
+    background-color: rgba(14, 15, 52, 0.5);
+    border:1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 0px 4px 2px rgba(255, 255, 255, 0.3);
+    border-radius: 0.5rem;
+    margin:2rem;
+    float: left;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin: 1rem;
+    color: white;
+    font-family: sans-serif;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items:center;
+    align-content: center;
+    padding: 1rem;
+}
+
+.div_e{
+    display: flex;
+    height: 10vh;
+    width: 20vw;
+    background-color: rgba(14, 15, 52, 0.5);
+    border:1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 0px 4px 2px rgba(255, 255, 255, 0.3);
+    border-radius: 0.5rem;
+    margin: 2rem;
+    float: right;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin: 1rem;
+    color: white;
+    font-family: sans-serif;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items:center;
+    align-content: center;
+    padding: 1rem;
+}
+
+.prop-name{
+    display:block;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    /* background-color: tan; */
+    width: 100%;
+    padding-bottom: 0.5rem;
+}
+
+.prop-value{
+    display: block;
+    /* background-color: teal; */
+    width: 100%;
+}
+
+.end{
+    margin-top: 5rem;
+    height: 70vh;
+    width: 100vw;
+    display:inline-block;
+    background-image: linear-gradient(#0E0F34,rgb(6, 40, 104));
+}
+
+
+/*  ******************* made by gunjan code *****************/
+body {
+    padding: 0px;
+    margin: 0px;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  #spring-text {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100vw;
+    height: 100vh;
+  }
+
+/* **************** the moving cloud background ******************* */
+.container{
+  width: 100%;
+  height: 50%;
+  min-width: 500px;
+  min-height: 500px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.container{
+  background-color: #007ced;
+	background: linear-gradient(to bottom, #007ced 1%,#cce7ff 100%);
+}
+#cloud-intro{
+  position: relative;
+  height: 100%;
+  background: url(https://static.radulescu.me/examples/clouds/clouds1000.png);
+  background: url(https://static.radulescu.me/examples/clouds/clouds1000.png) 0 200px,
+              url(https://static.radulescu.me/examples/clouds/clouds1200_1.png) 0 300px,
+              url(https://static.radulescu.me/examples/clouds/clouds1000_blur3.png) 100px 250px;
+	animation: wind 20s linear infinite;
+}
+@keyframes wind{
+  0% {
+    background-position: 0 200px, 0 300px, 100px 250px;
+  }
+  100% {
+    background-position: 1000px 200px, 1200px 300px, 1100px 250px;
+  }
+
+}
+
+/* ****************************** rising sun *************************** */
+
+html {
+    text-align: center;
+    /* background: #f4c042; */
+  }
+  svg {
+    width: 400px;
+    height: 300px;
+  }
+  * {
+    stroke: #e9b226;
+    stroke-linecap: round;
+    vector-effec: non-scaling-stroke;
+  }
+  [id='line'] {
+    stroke-width: 3;
+  }
+  text {
+    font: 0.875em century gothic, verdana, sans-serif;
+  }
+  [id='mover'] {
+    animation: sun-motion 5s cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite;
+  }
+  [id='main'] {
+    fill: transparent;
+    stroke-width: 7;
+  }
+  [id='eyes'] {
+    animation: eye-motion 5s ease-out infinite;
+  }
+  [id='eyes'] circle {
+    fill: #f0d041;
+  }
+  [id='ray'] {
+    stroke-width: 4;
+  }
+  [id='rays'] {
+    animation: rot 5s linear infinite;
+  }
+  @keyframes rot {
+    to {
+      transform: rotate(0.25turn);
+    }
+  }
+  @keyframes eye-motion {
+    0%, 20%, 49%, 100% {
+      transform: translate(-13px);
+    }
+    21%, 25%, 29%, 47% {
+      transform: translate(13px) scaleY(1);
+    }
+    27% {
+      transform: translate(13px) scaleY(0);
+    }
+    48% {
+      transform: translate(0);
+    }
+  }
+  @keyframes sun-motion {
+    0%, 99%, 100% {
+      transform: translateY(-16px);
+    }
+    50% {
+      transform: translateY(-29px);
+    }
+    52%, 98% {
+      transform: translate(4px) scaleY(1.25);
+    }
+    53%, 97% {
+      transform: translateY(23px);
+    }
+  }
+  
+/* *************************************** sunset ******************************* */
+
+/* body { */
+    /* background: #000; */
+    /* height: 100vh; */
+    /* overflow: hidden; */
+  /* }  */
+  #ui {
+    position: absolute;
+    /* top: 50%; */
+    /* left: 50%; */
+    width: 20vw;
+    height: 20vh;
+    /* margin: -250px 0 0 -250px; */
+  }
+  #ui .sun {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 150px;
+    margin: -150px 0 0 -150px;
+    border-radius: 300px 300px 0 0;
+    background: red;
+    z-index: 999;
+    filter: blur(0px) contrast(10);
+  }
+  #ui .sea {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 500px;
+    margin: -250px 0 0 -250px;
+    /* background: #000; */
+    filter: blur(10px) contrast(30);
+  }
+  #ui .sea .wave {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 340px;
+    height: 40px;
+    margin: -20px 0 0 -170px;
+    background: red;
+    border-radius: 100%;
+  }
+  #ui .sea .wave:nth-child(2) {
+    animation: wave 2000ms infinite linear -500ms;
+  }
+  #ui .sea .wave:nth-child(3) {
+    animation: wave 2000ms infinite linear -1000ms;
+  }
+  #ui .sea .wave:nth-child(4) {
+    animation: wave 2000ms infinite linear -1500ms;
+  }
+  #ui .sea .wave:nth-child(5) {
+    animation: wave 2000ms infinite linear -1500ms;
+  }
+  #ui .sea .wave:nth-child(6) {
+    animation: wave 2000ms infinite linear -2000ms;
+  }
+  @keyframes wave {
+    0% {
+      transform: translateY(0) sclae(1) rotateZ(0);
+    }
+    50% {
+      transform: translateY(80px) scale(0.5) rotateZ(5deg);
+    }
+    100% {
+      transform: translateY(120px) scale(0) rotateZ(-40deg);
+    }
+  }
+
+
+
+
+
+
+
+
+/* ***************************************** weather icons  ********************************* */
+
+
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+.icons
+{
+	width:130px;
+	height:130px;
+	border-radius: 40%;
+	z-index:120;
+} 
+
+.hot
+{ 
+    position: absolute; 
+	top:10%;
+	left:80%;
+	background:linear-gradient( to top right, rgba(255,87,34,1) 0%,
+	rgba(251,140,0 ,1) 100%);
+	box-shadow: 1px 1px 30px rgba(255,111,0 ,1);
+}
+.sun
+{
+	position: absolute;
+	top:-10%;
+	left:65%;
+	width:50px;
+	height: 50px;
+	border-radius: 100%;
+	background:linear-gradient( to bottom left, rgba(255,235,59,1) 0%,
+	rgba(249,168,37 ,1) 90%);
+	box-shadow: 1px 1px 30px rgba(255,160,0 ,1);
+	animation: inex 3s infinite linear ;
+	
+}
+
+.sunx
+{
+	position: absolute;
+	top:30%;
+	left:45%;
+	width:10px;
+	height: 10px;
+	border-radius: 100%;
+	background-color: #fff;
+	opacity:0.2;
+}
+.cloudy
+{ position: absolute;
+	top:10%;
+	left:63%;
+	background:linear-gradient( to top right, rgba(63,81,181,1) 0%,
+	rgba(3,155,229 ,1) 40%);
+	box-shadow: 1px 1px 30px rgba(2,119,189 ,1);
+
+}
+.cloud
+{
+position: absolute;
+	top:5%;
+	left:70%;
+	width:60px;
+	height: 20px;
+	border-radius:10px;
+	background-color: rgba(129,212,250 ,1);
+	box-shadow: 1px 1px 30px rgba(0,151,167 ,1);
+animation: move 3s infinite linear ;
+
+}
+.cloudx
+{
+	position: absolute;
+	top:23%;
+	left:55%;
+	width:60px;
+	height: 20px;
+	border-radius:10px;
+	background-color: rgba(129,212,250 ,1);
+	animation: move 3s infinite linear ;
+
+}
+.stormy
+{
+	position: absolute;
+	top:10%;
+	left:45%;
+	background:linear-gradient( to top right,rgba(117,117,117 ,1) 0%,
+	rgba(33,33,33 ,1) 90%);
+	box-shadow: 1px 1px 30px rgba(33,33,33 ,1);
+}
+.stormy li
+{
+	position: absolute;
+	list-style: none;
+	width: 5px;
+	height: 5px;
+	border-radius: 100%;
+	background-color:#777;
+	box-shadow: 1px 1px 30px #555;
+	animation: fall 3s infinite linear ;
+opacity:0;
+}
+.stormy li:nth-child(1)
+{
+	
+top:0%;
+left:100%;
+}
+
+.stormy li:nth-child(2)
+{
+top:5%;
+left:90%;
+}
+
+.stormy li:nth-child(3)
+{
+top:-10%;
+left:80%;
+animation-delay: 2s;
+}
+
+.stormy li:nth-child(4)
+{
+top:10%;
+left:100%;
+animation-delay: 2s;
+}
+
+.stormy li:nth-child(5)
+{
+top:20%;
+left:80%;
+animation-delay: 0.5s;
+}
+
+.stormy li:nth-child(6)
+{
+top:35%;
+left:70%;
+background-color: #bbb;
+animation-delay: 0.5s;
+}
+
+
+.stormy li:nth-child(7)
+{
+top:23%;
+left:60%;
+background-color: #bbb;
+animation-delay: 0.8s;
+}
+
+.stormy li:nth-child(8)
+{
+top:5%;
+left:70%;
+background-color: #bbb;
+animation-delay: 0.8s;
+}
+.snowe
+{
+position: absolute;
+	top:60%;
+	left:40%;
+	width:40px;
+	height: 40px;
+	border-radius:60px;
+	background-color: #ddd;
+	
+
+}
+.snowex
+{
+	position: absolute;
+	top:50%;
+	left:50%;
+	width:15px;
+	height: 15px;	
+	border-radius:15px;
+	background-color: #bbb;
+
+}
+.stick
+{
+	position: absolute;
+	top:60%;
+	left:40%;
+	width:3px;
+	height: 15px;	
+	transform: rotate(-45deg);
+	background-color: #333;
+z-index: -10;
+}
+.stick2
+{
+	position: absolute;
+	top:60%;
+	left:70%;
+	width:3px;
+	height: 15px;	
+	transform: rotate(45deg);
+	background-color: #333;
+z-index: -10;
+}
+.breezy
+{
+	position: absolute;
+	top:10%;
+	left:10%;
+	background:linear-gradient( to top right,rgba(156,204,101 ,1) 0%,
+	rgba(38,198,218 ,1) 50%);
+	box-shadow: 1px 1px 30px rgba(38,198,218 ,1);
+
+}
+.cloudr
+{
+position: absolute;
+	top:5%;
+	left:60%;
+	width:60px;
+	height: 20px;
+	border-radius:10px;
+	background-color: rgba(96,125,139 ,1);
+	box-shadow: 1px 1px 30px rgba(84,110,122 ,1);
+animation: flash 1.5s infinite linear;
+
+}
+
+.breezy li
+{
+	position: absolute;
+	list-style: none;
+	width: 2px;
+	height: 7px;
+	border-radius: 10%;
+	background-color:#eee;
+	opacity:0;
+	animation: fall 3s infinite linear ;
+	transform: rotate(25deg);
+}
+.breezy li:nth-child(1)
+{
+	
+top:10%;
+left:95%;
+}
+
+.breezy li:nth-child(2)
+{
+top:5%;
+left:83%;
+animation-delay:0.3s;
+}
+
+.breezy li:nth-child(3)
+{
+top:4%;
+left:87%;
+animation-delay:0.6s;
+}
+
+.breezy li:nth-child(4)
+{
+top:15%;
+left:70%;
+animation-delay:1s;
+}
+
+.breezy li:nth-child(5)
+{
+top:10%;
+left:75%;
+}
+
+.night
+{
+	position: absolute;
+	top:10%;
+	left:27%;
+	background:linear-gradient( to bottom right,rgba(63,81,181,1) 0%,
+	rgba(171,71,188 ,1) 70%);
+	box-shadow: 1px 1px 30px rgba(81,45,168 ,1);
+
+}
+.moon
+{
+	position: absolute;
+	top:-10%;
+	left:65%;
+	width:70px;
+	height: 70px;
+	border-radius: 100%;
+	background:rgba(255,241,118 ,1);
+	box-shadow: 1px 1px 30px rgba(224,224,224 ,1);
+}
+.spot1
+{
+	position: absolute;
+	top:0%;
+	left:85%;
+	width:10px;
+	height: 10px;
+	border-radius: 100%;
+	background-color: #777;
+}
+.spot2
+{
+	position: absolute;
+	top:30%;
+	left:75%;
+	width:5px;
+	height: 5px;
+	border-radius: 100%;
+	background-color: #777;
+}
+
+.night li
+{
+	position: absolute;
+	list-style: none;
+	width: 3px;
+	height: 3px;
+	border-radius: 100%;
+	background-color:#fff;
+	
+	
+	transform: rotate(45deg);
+}
+.night li:nth-child(1)
+{
+	
+top:30%;
+left:65%;
+}
+
+.night li:nth-child(2)
+{
+top:35%;
+left:53%;
+}
+
+.night li:nth-child(3)
+{
+
+opacity: 0;
+top:20%;
+left:75%;
+width:2px;
+height: 2px;
+animation: meteor 1.5s infinite linear;
+animation-delay: 0.6s;
+
+}
+
+.night li:nth-child(4)
+{
+top:5%;
+left:50%;
+}
+
+.night li:nth-child(5)
+{
+	opacity: 0;
+top:20%;
+left:55%;
+width:1px;
+height: 15px;
+animation: meteor 1.5s infinite linear;
+}
+
+@keyframes inex {
+
+
+	50% {
+	opacity: 0.4;
+
+	}
+	60%
+	{
+		opacity: 1;
+	}
+}
+@keyframes move {
+
+
+	50% {
+	transform: translateX(-10px);
+
+	}
+}
+@keyframes fall {
+10%
+{
+	opacity:0.8;
+}
+
+	50% {
+		opacity:1;
+	transform: translate(-10px,30px);
+
+	}
+	100%
+	{
+		transform: translate(-25px,70px);
+
+		
+	}
+}
+@keyframes flash
+{
+	48%
+	{
+		background-color: rgba(96,125,139 ,1);
+	}
+	50%
+	{
+		background-color: #fff;
+	}
+	55%
+	{
+		background-color: rgba(96,125,139 ,1);
+	}
+	57%
+	{
+		background-color: #fff;	
+	}
+}
+@keyframes meteor
+{
+
+10%
+{opacity: 1;
+}
+80%	
+{
+left:10%;
+top:75%;
+opacity: 0;
+}
+}
+
+
+
